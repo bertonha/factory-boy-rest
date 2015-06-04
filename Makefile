@@ -8,4 +8,4 @@ clean:
 release:
 	git tag $(shell python setup.py -q version)
 	git push origin $(shell python setup.py -q version)
-	python setup.py sdist upload -r titansgroup
+	python setup.py sdist upload
