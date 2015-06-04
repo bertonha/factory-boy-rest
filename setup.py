@@ -38,7 +38,7 @@ class VersionCommand(Command):
 
 
 setup(
-    name='factory-http',
+    name='factory-rest',
     version=version,
 
     description='Extension to factory-boy to create fixtures over http',
