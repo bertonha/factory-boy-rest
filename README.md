@@ -67,7 +67,7 @@ first run.
 python setup.py test
 ```
 
-Don't forget to run the test suite against all python versions affter submit a
+Don't forget to run the test suite against all python versions before submit a
 pull request. It's ease just do:
 
 ```
