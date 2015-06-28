@@ -12,7 +12,7 @@ import requests
 
 
 @httpretty.activate
-def test_factory_create_should_issue_post_to_propert_endpoint():
+def test_factory_create_should_issue_post_to_proper_endpoint():
     base_url = 'https://api.twitter.com/1.1'
     base_session = requests.session()
 
