@@ -2,4 +2,3 @@ factory-boy
 requests
 httpretty
 six
-ipdb
