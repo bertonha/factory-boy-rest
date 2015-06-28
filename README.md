@@ -58,8 +58,26 @@ pip install -e .[dev]
 Tests
 -----
 
+You have many forms to run tests.
+
+The following command will handle test dependencies installation. Perfect for
+first run.
+
 ```
 python setup.py test
+```
+
+Don't forget to run the test suite against all python versions affter submit a
+pull request. It's ease just do:
+
+```
+tox
+```
+
+If you want to run only for Python3 you can do:
+
+```
+tox -e py34
 ```
 
 

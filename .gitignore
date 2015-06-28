@@ -44,3 +44,5 @@ docs/_build/
 
 # vim
 *.swp
+
+*.orig
