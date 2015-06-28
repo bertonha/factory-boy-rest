@@ -7,10 +7,18 @@ A REST test fixtures replacement for Python.
 Installation
 ------------
 
+```
+pip install factory-rest
+```
+
+
+Development Installation
+------------------------
+
 Create a virtualenv:
 
 ```
-mkproject --python=<fullpath_to_python_3.2+> factory-boy-rest
+mkproject --python=<fullpath_to_python_3> factory-boy-rest
 ```
 
 Get the code:
