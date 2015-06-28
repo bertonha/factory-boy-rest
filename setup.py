@@ -1,11 +1,20 @@
 import os
 import re
+import sys
 import codecs
 
 from setuptools import setup, find_packages, Command
+from setuptools.command.test import test as TestCommand
 
 
 here = os.path.abspath(os.path.dirname(__file__))
+
+setup_requires = ['pytest', 'tox']
+install_requires = ['tox', 'factory-boy', 'requests']
+dev_requires = ['pyflakes', 'pep8', 'pylint', 'check-manifest',
+                'ipython', 'ipdb', 'sphinx', 'sphinx_rtd_theme',
+                'sphinxcontrib-napoleon']
+tests_require = ['pytest-cov', 'pytest-cache', 'pytest-timeout']
 
 
 # find the first version number in CHANGES
@@ -37,6 +46,20 @@ class VersionCommand(Command):
         print(version)
 
 
+class PyTest(TestCommand):
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = ['--strict', '--verbose', '--tb=long',
+                          '--cov', 'hystrix', '--cov-report',
+                          'term-missing', 'tests']
+        self.test_suite = True
+
+    def run_tests(self):
+        import pytest
+        errno = pytest.main(self.test_args)
+        sys.exit(errno)
+
+
 setup(
     name='factory-rest',
     version=version,
@@ -64,11 +87,12 @@ setup(
     ],
     keywords='testing test fixtures',
     packages=find_packages(exclude=['tests']),
-
-    install_requires=[
-        'factory-boy',
-        'requests',
-    ],
-
-    cmdclass={"version": VersionCommand},
+    setup_requires=setup_requires,
+    install_requires=install_requires,
+    tests_require=tests_require,
+    extras_require={
+        'dev': dev_requires,
+        'test': tests_require,
+    },
+    cmdclass={"version": VersionCommand, 'test': PyTest},
 )
