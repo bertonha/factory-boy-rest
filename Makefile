@@ -6,6 +6,7 @@ clean:
 	@find . -iname '__pycache__' -delete
 
 release:
+	check-manifest -u -v
 	git tag $(shell python setup.py -q version)
 	git push origin $(shell python setup.py -q version)
 	python setup.py sdist upload
