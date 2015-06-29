@@ -1,2 +1,4 @@
 factory-boy
 requests
+httpretty
+six
