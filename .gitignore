@@ -1,5 +1,6 @@
 # Backup files
 *.~
+*.orig
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -45,4 +46,6 @@ docs/_build/
 # vim
 *.swp
 
-*.orig
+# PyCharm
+.idea/
+
