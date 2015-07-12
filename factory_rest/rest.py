@@ -27,6 +27,7 @@ class RestFactoryOptions(base.FactoryOptions):
 
 
 class RestFactory(base.Factory):
+
     class Meta:
         abstract = True
         model = FakeModel
