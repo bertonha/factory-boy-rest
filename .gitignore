@@ -49,3 +49,5 @@ docs/_build/
 # PyCharm
 .idea/
 
+# Misc
+.venv/

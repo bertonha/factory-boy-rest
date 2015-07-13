@@ -30,7 +30,7 @@ mkproject --python=<fullpath_to_python_3> factory-boy-rest
 Get the code:
 
 ```
-git clone https://github.com/rbarrois/factory_boy.git .
+git clone https://github.com/bertonha/factory-boy-rest .
 ```
 
 Install it:
