@@ -2,3 +2,5 @@ factory-boy
 requests
 httpretty
 six
+sphinx
+sphinx-autobuild

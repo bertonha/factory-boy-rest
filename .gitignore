@@ -51,3 +51,4 @@ docs/_build/
 
 # Misc
 .venv/
+.env
